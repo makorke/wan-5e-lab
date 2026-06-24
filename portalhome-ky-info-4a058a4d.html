@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于 portalhome-ky.com —— 开云站点介绍</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background: #fafafa;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1e1e1e;
+    line-height: 1.7;
+    padding: 3.5rem 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .page {
+    max-width: 680px;
+    width: 100%;
+  }
+
+  /* 标题层级 */
+  .site-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+    color: #111;
+    border-left: 4px solid #2b7a6d;
+    padding-left: 1rem;
+  }
+  .site-sub {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+    padding-left: calc(1rem + 4px);
+  }
+  h2 {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin: 2.2rem 0 0.8rem 0;
+    color: #1f1f1f;
+    letter-spacing: -0.01em;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.4rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 1.6rem 0 0.5rem 0;
+    color: #2a2a2a;
+  }
+
+  /* 正文 */
+  p {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    color: #333;
+  }
+  .lead {
+    font-size: 1.08rem;
+    background: #f1f6f4;
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    margin: 1.8rem 0 1.8rem;
+    color: #1d3b36;
+    border-left: 4px solid #2b7a6d;
+    font-weight: 420;
+  }
+  .pull-quote {
+    margin: 2rem 0;
+    padding: 1.2rem 1.8rem;
+    background: #ffffff;
+    border: 1px solid #d4ddd9;
+    border-radius: 6px;
+    font-style: normal;
+    color: #2a5c54;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    position: relative;
+  }
+  .pull-quote::before {
+    content: "“";
+    font-size: 2.2rem;
+    color: #2b7a6d;
+    position: absolute;
+    top: -0.2rem;
+    left: 0.6rem;
+    line-height: 1;
+  }
+  .pull-quote p {
+    margin: 0 0 0.2rem 0;
+    padding-left: 1.2rem;
+  }
+
+  /* 列表 / 简释 */
+  .info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin: 1.6rem 0;
+  }
+  .info-item {
+    flex: 1 1 200px;
+    background: #f6f8f7;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #e6edeb;
+  }
+  .info-item strong {
+    display: block;
+    font-weight: 540;
+    margin-bottom: 0.2rem;
+    color: #1b4d44;
+  }
+  .info-item span {
+    font-size: 0.95rem;
+    color: #3d3d3d;
+  }
+
+  /* 引用（faq 风格） */
+  .faq-note {
+    background: #fafcfb;
+    border-radius: 6px;
+    padding: 0.8rem 1.4rem;
+    margin: 1.6rem 0;
+    border: 1px dashed #bccfc9;
+    font-size: 0.95rem;
+  }
+  .faq-note strong {
+    color: #20665b;
+  }
+
+  /* 链接样式 */
+  a {
+    color: #20665b;
+    text-decoration: none;
+    border-bottom: 1px solid #b3d0c8;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  a:hover {
+    color: #0f4038;
+    border-bottom-color: #1e5a4f;
+  }
+
+  /* CTA 风格的小提示（非强迫） */
+  .context-link {
+    display: inline-block;
+    background: #edf3f0;
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+    font-weight: 450;
+  }
+
+  /* 响应式 */
+  @media (max-width: 480px) {
+    body {
+      padding: 2rem 1rem 3rem;
+    }
+    .site-title {
+      font-size: 1.5rem;
+      padding-left: 0.8rem;
+    }
+    .lead {
+      padding: 1rem 1.2rem;
+    }
+    .info-grid {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1 class="site-title">portalhome-ky.com</h1>
+  <div class="site-sub">站点定位 · 信息框架与可信说明</div>
+
+  <p class="lead">
+    本文从站点介绍与可信说明的角度，梳理 <a href="https://portalhome-ky.com">开云</a> 所承载的功能边界、内容属性以及访问者可以合理预期的信息质量。以下内容基于公开信息与站点结构归纳而成。
+  </p>
+
+  <h2>站点背景与定位</h2>
+  <p>
+    portalhome-ky.com 是一个以信息聚合与导航服务为定位的独立站点，其核心标识「开云」指向一种轻量、开放的信息组织方式。站点不主张任何超出内容本身的功能承诺，也不对第三方引用内容承担责任。访问者可根据自身判断筛选和使用站内所呈现的链接与资源。
+  </p>
+
+  <h2>内容组织与特点</h2>
+  <p>
+    站内内容主要围绕工具索引、主题聚合、参考文档三类板块展开。结构设计优先考虑可读性与低混淆度，标题层级清晰，每个板块均附有简短说明。值得注意的是，站点并未采用算法推荐或个性化推送机制，内容排序由编辑逻辑决定，这在一定程度上降低了信息噪音，但也意味着内容广度依赖维护频率。
+  </p>
+
+  <div class="info-grid">
+    <div class="info-item">
+      <strong>工具索引</strong>
+      <span>收录经过筛选的在线工具与资源，标注来源与适用场景。</span>
+    </div>
+    <div class="info-item">
+      <strong>主题聚合</strong>
+      <span>围绕特定关键词或领域整理的外部文章与参考条目。</span>
+    </div>
+    <div class="info-item">
+      <strong>参考文档</strong>
+      <span>提供基础概念说明与操作指引，内容保持中立。</span>
+    </div>
+  </div>
+
+  <h3>可信说明与使用建议</h3>
+  <p>
+    <a href="https://portalhome-ky.com">开云</a> 本身不生产原始数据或独家研究报告，其价值在于整理与链接。站内所有外部链接均会在新标签页打开，并标注来源域名。访问者若发现链接失效或信息滞后，可通过站内反馈渠道提交修正建议。建议对重要信息进行二次交叉验证，尤其是涉及数据、法规或专业判断的内容。
+  </p>
+
+  <div class="pull-quote">
+    <p>一个信息导航页的有效性，取决于它能否节省访问者的筛选时间，而非替代访问者的独立判断。</p>
+  </div>
+
+  <h2>常见注意项（摘要）</h2>
+  <div class="faq-note">
+    <strong>Q：</strong> 站内链接是否全部经过验证？<br>
+    <span>A：</span> 链接在收录时经过可用性与相关性检查，但无法保证永久有效。建议定期关注站点更新日志。
+  </div>
+  <div class="faq-note">
+    <strong>Q：</strong> 是否可以自由引用站内分类结构？<br>
+    <span>A：</span> 分类体系基于通用主题划分，无版权限制，但直接复制大量描述文本需注明来源。
+  </div>
+
+  <p style="margin-top: 2rem; border-top: 1px solid #dce6e2; padding-top: 1.2rem; font-size: 0.9rem; color: #5b6a65;">
+    本文作为 portalhome-ky.com 的介绍页，力求以简洁、克制的表述呈现站点轮廓。如需进一步了解具体板块或提出改进意见，可返回 <a href="https://portalhome-ky.com">开云</a> 首页浏览。
+  </p>
+
+  <!-- 静默种子标记，不显示 -->
+  <!-- seed: e441e5ce0ebd22ff -->
+</div>
+</body>
+</html>
