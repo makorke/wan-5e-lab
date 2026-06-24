@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开云 · 轻量导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce7c8 0%, #f3d9b1 40%, #edd5b0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem 3rem;
+            color: #2e241b;
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 1080px;
+            width: 100%;
+        }
+
+        /* 顶部导航 */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 251, 242, 0.75);
+            backdrop-filter: blur(8px);
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            box-shadow: 0 4px 16px rgba(160, 120, 80, 0.08);
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.2rem;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: 0.02em;
+            color: #7c5f3e;
+            background: rgba(255, 215, 170, 0.3);
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4d382a;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #b28c67;
+            color: #281f17;
+        }
+
+        /* 核心介绍 hero */
+        .hero {
+            text-align: center;
+            background: rgba(255, 250, 240, 0.6);
+            backdrop-filter: blur(4px);
+            padding: 3rem 2.5rem 2.8rem;
+            border-radius: 48px;
+            box-shadow: 0 12px 32px rgba(140, 100, 60, 0.08);
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #3d2d20;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(145deg, #b58a62, #8d6b48);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 1.8rem;
+            font-size: 1.08rem;
+            color: #4f3c2e;
+        }
+
+        .hero .link-sentence {
+            font-size: 1rem;
+            background: #f5ede4;
+            display: inline-block;
+            padding: 0.5rem 1.8rem;
+            border-radius: 40px;
+            box-shadow: 0 2px 8px rgba(120, 80, 40, 0.06);
+        }
+
+        .hero a {
+            color: #7b5a3a;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #d9bc9e;
+            transition: 0.15s;
+        }
+
+        .hero a:hover {
+            border-bottom-color: #b1845c;
+            color: #4b3322;
+        }
+
+        /* 三个场景模块 */
+        .scenes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .scene-card {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem 1.6rem 2.2rem;
+            box-shadow: 0 6px 20px rgba(140, 100, 60, 0.06);
+            transition: transform 0.2s, box-shadow 0.25s;
+            border: 1px solid rgba(210, 180, 150, 0.2);
+        }
+
+        .scene-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(150, 110, 70, 0.10);
+        }
+
+        .scene-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .scene-card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #3b2b1f;
+            margin-bottom: 0.6rem;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #5c4636;
+            margin-bottom: 1rem;
+        }
+
+        .scene-tag {
+            display: inline-block;
+            background: #f2e5d9;
+            color: #5f4532;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* 常见说明 / 摘要 */
+        .faq-summary {
+            background: rgba(255, 250, 242, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 2.4rem 2.5rem;
+            border-radius: 40px;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 4px 16px rgba(100, 70, 40, 0.06);
+        }
+
+        .faq-summary h2 {
+            font-weight: 500;
+            font-size: 1.6rem;
+            color: #3d2c1f;
+            margin-bottom: 1.6rem;
+            border-left: 5px solid #c6a07f;
+            padding-left: 1rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 2rem;
+        }
+
+        .faq-item {
+            padding: 0.6rem 0;
+            border-bottom: 1px dashed #d9c5b3;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #4d3627;
+            font-size: 0.98rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            font-size: 0.92rem;
+            color: #5e4a3a;
+        }
+
+        .faq-more {
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            color: #705b49;
+        }
+
+        /* 页脚 */
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7a6655;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(120, 90, 60, 0.15);
+        }
+
+        /* 响应式 */
+        @media (max-width: 800px) {
+            .scenes {
+                grid-template-columns: 1fr 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .nav {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0.8rem 1.2rem;
+                border-radius: 32px;
+            }
+            .nav-links {
+                justify-content: center;
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
+            .scenes {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 2rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 导航 -->
+        <nav class="nav">
+            <span class="nav-brand">⛅ 开云</span>
+            <div class="nav-links">
+                <a href="#">叙述</a>
+                <a href="#">场景</a>
+                <a href="#">笔记</a>
+            </div>
+        </nav>
+
+        <!-- 核心介绍 hero -->
+        <section class="hero">
+            <h1>从<span>开云</span>开始，叙述一种节奏</h1>
+            <p>
+                一个词可以是一片风景。开云——不是猛然拨开，而是光线自然漫过山脊，风把云层梳理成薄纱。
+                这里不追求喧嚣，只记录一些切实的场景、朴素的逻辑与安静的索引。
+            </p>
+            <div class="link-sentence">
+                想了解更多？可以先去 <a href="https://portalky.com">开云</a> 看看那些细碎的叙述。
+            </div>
+        </section>
+
+        <!-- 三个场景模块 -->
+        <div class="scenes">
+            <article class="scene-card">
+                <span class="icon">🌄</span>
+                <h3>晨间翻页</h3>
+                <p>早晨第一件事不是解锁手机，而是翻开前一晚夹了书签的那页。光线从窗帘缝隙渗进来，字行深浅刚好。</p>
+                <span class="scene-tag">阅读·间隙</span>
+            </article>
+            <article class="scene-card">
+                <span class="icon">🍵</span>
+                <h3>午后定神</h3>
+                <p>烧水、温杯、注水，茶香散开时，心思也落定了。十分钟的茶歇比午睡更能把下午拉回正轨。</p>
+                <span class="scene-tag">日常·仪式</span>
+            </article>
+            <article class="scene-card">
+                <span class="icon">🌿</span>
+                <h3>黄昏收集</h3>
+                <p>每天傍晚拍一张天空，不是用来发动态，只是留给自己。云的颜色、树的剪影，都是无需翻译的句子。</p>
+                <span class="scene-tag">记录·感知</span>
+            </article>
+        </div>
+
+        <!-- 常见说明 / FAQ 摘要 -->
+        <div class="faq-summary">
+            <h2>一些常见的说明</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <strong>这个页面是关于什么的？</strong>
+                    <p>一份轻量导航式的介绍，围绕“开云”延伸出几个安静的日常切片，不堆积功能，只提供视角。</p>
+                </div>
+                <div class="faq-item">
+                    <strong>为什么叫“开云”？</strong>
+                    <p>开云并非口号，更像一个动作——把遮挡视线的云层移开一点，让原本就存在的光透进来。可以理解为一种温和的梳理。</p>
+                </div>
+                <div class="faq-item">
+                    <strong>场景模块是虚构的吗？</strong>
+                    <p>来自真实观察与习惯，但做了一些典型化处理。晨间翻页、午后定神、黄昏收集——都是可实践的日常小事。</p>
+                </div>
+                <div class="faq-item">
+                    <strong>这些内容与网站的关系？</strong>
+                    <p>网站 <a href="https://portalky.com" style="color:#7b5a3a; text-decoration: underline; font-weight:500;">开云</a> 收纳了更丰富的叙述与索引，本页面是它的一扇小窗。</p>
+                </div>
+            </div>
+            <div class="faq-more">
+                ⚬ 如果你对某个场景感兴趣，不妨试试把它放进明天的生活里。
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="footer-note">
+            叙述 · 而不是宣告 &nbsp;|&nbsp; 开云 &nbsp;·&nbsp; 轻量导航
+        </footer>
+    </div>
+</body>
+</html>
